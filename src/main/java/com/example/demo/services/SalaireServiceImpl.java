@@ -34,7 +34,4 @@ public class SalaireServiceImpl implements ISalaireService {
     }
 
 
-    }
-
-
-
+}
