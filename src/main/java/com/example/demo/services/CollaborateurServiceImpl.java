@@ -11,6 +11,7 @@ import java.util.List;
 public class CollaborateurServiceImpl implements ICollaborateurService {
     @Autowired
     ICollaborateurRepository collaborateurRepository;
+
     @Override
     public Collaborateur addCollaborateur(Collaborateur collaborateur) {
         return collaborateurRepository.save(collaborateur);
