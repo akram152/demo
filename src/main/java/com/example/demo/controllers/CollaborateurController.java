@@ -1,5 +1,7 @@
 package com.example.demo.controllers;
 
+import com.example.demo.Enum.Role;
+import com.example.demo.Enum.niveauEtude;
 import com.example.demo.entities.Collaborateur;
 import com.example.demo.services.ICollaborateurService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +27,7 @@ public class CollaborateurController {
 
     @GetMapping("getAllCollab")
     public List<Collaborateur> getAllCollab() {
-        return  collaborateurService.getAllCollaborateurs();
+        return collaborateurService.getAllCollaborateurs();
     }
 
     @PutMapping("PutCollab")
@@ -38,12 +40,19 @@ public class CollaborateurController {
         collaborateurService.deleteCollaborateur(id);
     }
 
+    @GetMapping("getByNomEtPrenom/{nom}/{prenom}")
+    public Collaborateur getByNomEtPrenom(@PathVariable("nom") String nom, @PathVariable("prenom") String prenom) {
+        return collaborateurService.findByNomAndPrenom(nom, prenom);
+    }
 
+    @GetMapping("getByNiveauEtude/{niveau}")
+    public List<Collaborateur> getByNiveauEtude(@PathVariable("niveau") niveauEtude niveau) {
+        return collaborateurService.findByNiveau(niveau);
+    }
 
-
-
-
-
-
+    @GetMapping("getByRole/{role}")
+    public Collaborateur getByRole(@PathVariable("role") Role role) {
+        return collaborateurService.findByRole(role);
+    }
 
 }

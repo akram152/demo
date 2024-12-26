@@ -42,6 +42,4 @@ public class ContratController {
     public Contrat assignContratCollab(@PathVariable("idContrat") int idContrat, @PathVariable("idCollab") int idCollab) {
         return icontratService.assignContratCollaborator(idContrat, idCollab);
     }
-
-
 }
