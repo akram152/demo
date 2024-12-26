@@ -1,6 +1,6 @@
 package com.example.demo.services.Impl;
 
-import com.example.demo.services.Interf.IContratService;
+import com.example.demo.services.IContratService;
 import org.springframework.stereotype.Service;
 
 @Service

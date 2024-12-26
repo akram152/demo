@@ -2,7 +2,7 @@ package com.example.demo.services.Impl;
 
 import com.example.demo.entities.Departement;
 import com.example.demo.repository.IDepartementRepository;
-import com.example.demo.services.Interf.IDepartementService;
+import com.example.demo.services.IDepartementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

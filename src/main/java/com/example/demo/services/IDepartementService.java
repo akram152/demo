@@ -1,7 +1,6 @@
-package com.example.demo.services.Interf;
+package com.example.demo.services;
 
 import com.example.demo.entities.Departement;
-import com.example.demo.entities.Salaire;
 
 import java.util.List;
 
