@@ -23,7 +23,7 @@ public class DepartementController {
     public void updateDepartement(@RequestBody Departement departement) {
         departementService.saveOrUpdateDepartement (departement);
     }
-
+    //test valider
     @GetMapping("getid/{id}")
     public Departement getDepartementById(@PathVariable("id") int id) {
         return departementService.getDepartementById(id);
