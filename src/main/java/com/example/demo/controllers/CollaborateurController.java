@@ -27,7 +27,7 @@ public class CollaborateurController {
 
     @GetMapping("getAllCollab")
     public List<Collaborateur> getAllCollab() {
-        return  collaborateurService.getAllCollaborateurs();
+        return collaborateurService.getAllCollaborateurs();
     }
 
     @PutMapping("PutCollab")
@@ -54,13 +54,5 @@ public class CollaborateurController {
     public Collaborateur getByRole(@PathVariable("role") Role role) {
         return collaborateurService.findByRole(role);
     }
-
-
-
-
-
-
-
-
 
 }
