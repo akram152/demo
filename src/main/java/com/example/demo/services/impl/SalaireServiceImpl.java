@@ -1,4 +1,4 @@
-package com.example.demo.services.Impl;
+package com.example.demo.services.impl;
 
 import com.example.demo.Enum.Mois;
 import com.example.demo.entities.Salaire;

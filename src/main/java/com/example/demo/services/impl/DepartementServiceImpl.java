@@ -1,4 +1,4 @@
-package com.example.demo.services.Impl;
+package com.example.demo.services.impl;
 
 import com.example.demo.entities.Departement;
 import com.example.demo.repository.IDepartementRepository;
@@ -37,8 +37,8 @@ public class DepartementServiceImpl implements IDepartementService {
     }
 
     @Override
-    public void  DeleteDepartement(int id) {
-         departementRepository.deleteById(id);
+    public void DeleteDepartement(int id) {
+        departementRepository.deleteById(id);
     }
 
 
