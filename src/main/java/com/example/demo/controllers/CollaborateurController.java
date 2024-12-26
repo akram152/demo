@@ -3,7 +3,7 @@ package com.example.demo.controllers;
 import com.example.demo.Enum.Role;
 import com.example.demo.Enum.niveauEtude;
 import com.example.demo.entities.Collaborateur;
-import com.example.demo.services.interfac.ICollaborateurService;
+import com.example.demo.services.ICollaborateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

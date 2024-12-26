@@ -4,7 +4,7 @@ import com.example.demo.entities.Collaborateur;
 import com.example.demo.entities.Contrat;
 import com.example.demo.repository.ICollaborateurRepository;
 import com.example.demo.repository.IContratRepository;
-import com.example.demo.services.interfac.IContratService;
+import com.example.demo.services.IContratService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
