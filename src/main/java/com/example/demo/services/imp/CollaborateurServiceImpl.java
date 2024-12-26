@@ -1,7 +1,10 @@
-package com.example.demo.services;
+package com.example.demo.services.imp;
 
+import com.example.demo.Enum.Role;
+import com.example.demo.Enum.niveauEtude;
 import com.example.demo.entities.Collaborateur;
 import com.example.demo.repository.ICollaborateurRepository;
+import com.example.demo.services.interfac.ICollaborateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,5 +39,20 @@ public class CollaborateurServiceImpl implements ICollaborateurService {
     public void deleteCollaborateur(int id) {
         collaborateurRepository.deleteById(id);
 
+    }
+
+    @Override
+    public Collaborateur findByNomAndPrenom(String nom, String prenom) {
+        return collaborateurRepository.findByNomAndPrenom(nom, prenom);
+    }
+
+    @Override
+    public List<Collaborateur> findByNiveau(niveauEtude niveau) {
+        return collaborateurRepository.findByNiveau(niveau);
+    }
+
+    @Override
+    public Collaborateur findByRole(Role role) {
+        return collaborateurRepository.findByRole(role);
     }
 }

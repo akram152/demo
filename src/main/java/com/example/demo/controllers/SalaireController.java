@@ -1,7 +1,7 @@
 package com.example.demo.controllers;
 
 import com.example.demo.entities.Salaire;
-import com.example.demo.services.ISalaireService;
+import com.example.demo.services.interfac.ISalaireService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,4 +45,17 @@ public class SalaireController {
         salaireService.deleteSalaire(id);
         return ResponseEntity.ok("Supprimé");
     }
+
+    @DeleteMapping
+    public ResponseEntity<String> deleteAll() {
+        salaireService.deleteAllSalaire();
+        return ResponseEntity.ok("Supprimé toutes les salaires");
+    }
+
+    @PutMapping("assignSalaireCollab/{idSalaire}/{idCollab}")
+    public Salaire assignSalaireCollab(@PathVariable("idSalaire") int idSalaire, @PathVariable("idCollab") int idCollab) {
+        return salaireService.assignSalaireCollaborateur(idSalaire, idCollab);
+    }
+
+
 }

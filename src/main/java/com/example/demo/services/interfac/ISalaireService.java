@@ -1,4 +1,4 @@
-package com.example.demo.services;
+package com.example.demo.services.interfac;
 
 import com.example.demo.entities.Salaire;
 
@@ -16,6 +16,12 @@ public interface ISalaireService {
 
     // Supprimer un salaire par son ID
     void deleteSalaire(int id);
+    void deleteAllSalaire();
+    Salaire assignSalaireCollaborateur(int idSalaire, int idCollaborateur);
+
+
+
+
 
     // Trouver les salaires d'un collaborateur pour une année donnée
 

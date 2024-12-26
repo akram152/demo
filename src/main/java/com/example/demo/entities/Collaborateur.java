@@ -3,6 +3,7 @@ package com.example.demo.entities;
 import com.example.demo.Enum.Role;
 import com.example.demo.Enum.natureEtude;
 import com.example.demo.Enum.niveauEtude;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,14 +34,15 @@ public class Collaborateur {
     private int numDeCompte;
     private int numSecurite;
     @Enumerated(EnumType.STRING)
+    private niveauEtude niveau;
+    @Enumerated(EnumType.STRING)
     private Role role;
     @Enumerated(EnumType.STRING)
     private natureEtude nature;
-    @Enumerated(EnumType.STRING)
-    private niveauEtude niveau;
     @OneToMany(mappedBy = "collaborateur")
     private List<Salaire> salaire;
     @OneToMany(mappedBy = "collaborateur")
+    @JsonIgnore
     List<Contrat> contrat;
     @ManyToOne
     Departement departement;

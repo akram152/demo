@@ -1,6 +1,7 @@
 package com.example.demo.entities;
 
 import com.example.demo.Enum.TypeContrat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class Contrat {
     private Date dateDebutContrat;
     private Date dateFinContrat;
     @ManyToOne
+
     Collaborateur collaborateur;
 }
 
