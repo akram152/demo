@@ -17,13 +17,9 @@ public interface ISalaireService {
 
     // Supprimer un salaire par son ID
     void deleteSalaire(int id);
+
     void deleteAllSalaire();
+
     Salaire assignSalaireCollaborateur(int idSalaire, int idCollaborateur);
-
-
-
-
-
-    List<Salaire> findSalaireByMoisAndAnnee(Mois mois, int annee);
 
 }
