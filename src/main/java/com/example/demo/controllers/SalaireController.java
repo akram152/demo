@@ -1,7 +1,9 @@
 package com.example.demo.controllers;
 
+import com.example.demo.Enum.Mois;
+import com.example.demo.entities.Departement;
 import com.example.demo.entities.Salaire;
-import com.example.demo.services.ISalaireService;
+import com.example.demo.services.Interf.ISalaireService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,8 +42,13 @@ public class SalaireController {
         return ResponseEntity.ok(salaires);
     }
 
+    @GetMapping("getbymoisandannee/{mois}/{annee}")
+    public List<Salaire> getByMoisannee(@PathVariable Mois mois, @PathVariable int annee) {
+        return salaireService.findSalaireByMoisAndAnnee(mois, annee);
+    }
+
     @DeleteMapping("/id/{id}")
-    public ResponseEntity<String> deleteById(@PathVariable int id) {
+    public ResponseEntity<String> deleteById(@PathVariable("id") int id) {
         salaireService.deleteSalaire(id);
         return ResponseEntity.ok("Supprimé");
     }
