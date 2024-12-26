@@ -1,11 +1,10 @@
-package com.example.demo.services.imp;
+package com.example.demo.services.impl;
 
-import com.example.demo.Enum.Mois;
 import com.example.demo.entities.Collaborateur;
 import com.example.demo.entities.Salaire;
 import com.example.demo.repository.ICollaborateurRepository;
 import com.example.demo.repository.ISalaireRepository;
-import com.example.demo.services.interfac.ISalaireService;
+import com.example.demo.services.ISalaireService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

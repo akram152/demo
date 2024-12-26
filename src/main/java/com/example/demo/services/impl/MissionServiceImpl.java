@@ -1,10 +1,10 @@
-package com.example.demo.services.imp;
+package com.example.demo.services.impl;
 
 import com.example.demo.entities.Collaborateur;
 import com.example.demo.entities.Mission;
 import com.example.demo.repository.ICollaborateurRepository;
 import com.example.demo.repository.IMissionRepository;
-import com.example.demo.services.interfac.IMissionService;
+import com.example.demo.services.IMissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

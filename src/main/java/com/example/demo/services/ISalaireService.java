@@ -1,5 +1,6 @@
-package com.example.demo.services.interfac;
+package com.example.demo.services;
 
+import com.example.demo.Enum.Mois;
 import com.example.demo.entities.Salaire;
 
 import java.util.List;
@@ -16,15 +17,9 @@ public interface ISalaireService {
 
     // Supprimer un salaire par son ID
     void deleteSalaire(int id);
+
     void deleteAllSalaire();
+
     Salaire assignSalaireCollaborateur(int idSalaire, int idCollaborateur);
 
-
-
-
-
-    // Trouver les salaires d'un collaborateur pour une année donnée
-
-
-    // Trouver les salaires supérieurs à un montant brut donné
 }
