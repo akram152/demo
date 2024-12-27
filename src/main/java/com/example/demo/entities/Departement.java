@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,5 +21,6 @@ public class Departement {
     private long id;
     private String nomDepartement;
     @OneToMany(mappedBy = "departement")
+    @JsonIgnore
     List<Collaborateur> collaborateurs;
 }

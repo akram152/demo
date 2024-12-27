@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import com.example.demo.Enum.Role;
 import com.example.demo.Enum.niveauEtude;
 import com.example.demo.entities.Collaborateur;
+import com.example.demo.entities.Contrat;
 import com.example.demo.services.ICollaborateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -53,6 +54,11 @@ public class CollaborateurController {
     @GetMapping("getByRole/{role}")
     public Collaborateur getByRole(@PathVariable("role") Role role) {
         return collaborateurService.findByRole(role);
+    }
+
+    @PutMapping("assignCollabDepartement/{idCollaborateur}/{idDepartement}")
+    public Collaborateur assignContratCollab(@PathVariable("idCollaborateur") int idCollaborateur, @PathVariable("idDepartement") int idDepartement) {
+        return collaborateurService.assignCollaborateurDepartement(idCollaborateur, idDepartement);
     }
 
 }

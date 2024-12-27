@@ -23,4 +23,6 @@ public interface ICollaborateurService {
 
     Collaborateur findByRole(Role role);
 
+    Collaborateur assignCollaborateurDepartement(int idCollaborateur, int idDepartement);
+
 }

@@ -40,6 +40,7 @@ public class Collaborateur {
     @Enumerated(EnumType.STRING)
     private natureEtude nature;
     @OneToMany(mappedBy = "collaborateur")
+    @JsonIgnore
     private List<Salaire> salaire;
     @OneToMany(mappedBy = "collaborateur")
     @JsonIgnore
@@ -47,6 +48,7 @@ public class Collaborateur {
     @ManyToOne
     Departement departement;
     @OneToMany(mappedBy = "collaborateur")
+    @JsonIgnore
     List<Mission> mission;
 
 

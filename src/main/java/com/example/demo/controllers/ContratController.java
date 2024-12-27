@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.Enum.TypeContrat;
 import com.example.demo.entities.Contrat;
 import com.example.demo.services.IContratService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,10 @@ public class ContratController {
     @PutMapping("assignContratCollab/{idContrat}/{idCollab}")
     public Contrat assignContratCollab(@PathVariable("idContrat") int idContrat, @PathVariable("idCollab") int idCollab) {
         return icontratService.assignContratCollaborator(idContrat, idCollab);
+    }
+
+    @GetMapping("getByTypeContrat/{typeContrat}")
+    public List<Contrat> getContratByTypeContrat(@PathVariable("typeContrat") TypeContrat typeContrat) {
+        return icontratService.findByTypeContrat(typeContrat);
     }
 }

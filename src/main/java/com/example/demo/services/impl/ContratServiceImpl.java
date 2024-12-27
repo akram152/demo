@@ -1,5 +1,6 @@
 package com.example.demo.services.impl;
 
+import com.example.demo.Enum.TypeContrat;
 import com.example.demo.entities.Collaborateur;
 import com.example.demo.entities.Contrat;
 import com.example.demo.repository.ICollaborateurRepository;
@@ -44,5 +45,10 @@ public class ContratServiceImpl implements IContratService {
         contrat.setCollaborateur(collab);
 
         return iContratRepository.save(contrat);
+    }
+
+    @Override
+    public List<Contrat> findByTypeContrat(TypeContrat typeContrat) {
+        return iContratRepository.findByTypeContrat(typeContrat);
     }
 }

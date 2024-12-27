@@ -15,4 +15,5 @@ public interface IDepartementService {
     Departement saveOrUpdateDepartement (Departement departement);
 
     void DeleteDepartement (int id);
+
 }
