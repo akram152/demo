@@ -43,7 +43,6 @@ public class ContratServiceImpl implements IContratService {
         Contrat contrat = iContratRepository.findById(idContrat).get();
         Collaborateur collab = iCollaborateurRepository.findById(idCollaborator).get();
         contrat.setCollaborateur(collab);
-
         return iContratRepository.save(contrat);
     }
 

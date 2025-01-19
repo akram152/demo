@@ -6,5 +6,4 @@ public enum nomPoste {
     ANALYSTE_PROGRAMMEUR,
     TESTEUR_QUALITE,
     DATA_ENGINEER
-
 }

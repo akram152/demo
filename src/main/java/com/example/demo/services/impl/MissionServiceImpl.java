@@ -8,6 +8,8 @@ import com.example.demo.services.IMissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MissionServiceImpl implements IMissionService {
     @Autowired
@@ -38,4 +40,6 @@ public class MissionServiceImpl implements IMissionService {
         mission.setCollaborateur(collab);
         return imissionRepository.save(mission);
     }
+
+
 }

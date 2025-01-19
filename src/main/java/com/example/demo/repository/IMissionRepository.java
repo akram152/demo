@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface IMissionRepository extends CrudRepository<Mission, Integer> {
+
 }
