@@ -3,6 +3,7 @@ package com.example.demo.entities;
 import com.example.demo.Enum.Role;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 
 @Entity

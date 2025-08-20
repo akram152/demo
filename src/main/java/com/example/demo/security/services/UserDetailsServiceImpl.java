@@ -1,7 +1,7 @@
 package com.example.demo.security.services;
 
-import com.example.demo.entities.Collaborateur;
-import com.example.demo.repository.ICollaborateurRepository;
+import com.example.demo.entities.Utilisateur;
+import com.example.demo.repository.IUtilisateurRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,15 +13,15 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
-    ICollaborateurRepository iCollaborateurRepository;
+    IUtilisateurRepository iUtilisateurRepository;
 
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Collaborateur collaborateur = iCollaborateurRepository.findByUsername(username)
+        Utilisateur utilisateur = iUtilisateurRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User Not Found with email: " + username));
 
-        return UserDetailsImpl.build(collaborateur);
+        return UserDetailsImpl.build(utilisateur);
     }
 
 }

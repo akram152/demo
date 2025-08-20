@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import com.example.demo.entities.Collaborateur;
+import com.example.demo.entities.Utilisateur;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -35,18 +35,19 @@ public class UserDetailsImpl implements UserDetails {
         this.authorities = authorities;
     }
 
-    public static UserDetailsImpl build(Collaborateur collaborateur) {
-        List<GrantedAuthority> authorities = collaborateur.getRoles().stream()
-                .map(role -> new SimpleGrantedAuthority(role.getName().name()))
+    public static UserDetailsImpl build(Utilisateur utilisateur) {
+        List<GrantedAuthority> authorities = utilisateur.getRoles().stream()
+                .map(role -> new SimpleGrantedAuthority("ROLE_"+role.getName().name()))
                 .collect(Collectors.toList());
 
         return new UserDetailsImpl(
-                (long) collaborateur.getId(),
-                collaborateur.getUsername(),
-                collaborateur.getEmail(),
-                collaborateur.getPassword(),
+                (long) utilisateur.getId(),
+                utilisateur.getUsername(),
+                utilisateur.getEmail(),
+                utilisateur.getPassword(),
                 authorities);
     }
+
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
